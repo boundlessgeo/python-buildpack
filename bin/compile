@@ -226,6 +226,9 @@ source $BIN_DIR/steps/pylibmc
 # Libffi support.
 source $BIN_DIR/steps/cryptography
 
+# Support for GEOINT libraries.
+sub-env $BIN_DIR/steps/geoint-libs
+
 # Support for Geo libraries.
 sub-env $BIN_DIR/steps/geo-libs
 
