@@ -27,7 +27,7 @@ if [[ "$BUILD_WITH_GEOINT_LIBRARIES" ]]; then
   fi
 
   # Update env variables
-  status "Building runtime environment."
+  echo "-----> Building runtime environment."
   mkdir -p /app/.profile.d
   echo 'export LIBKML_LIBS="${LIBRARY_PATH}"' > /app/.profile.d/geoint.sh
   echo 'export GDAL_DATA="/app/.heroku/vendor/share/gdal"' >> /app/.profile.d/geoint.sh
@@ -36,7 +36,7 @@ if [[ "$BUILD_WITH_GEOINT_LIBRARIES" ]]; then
   echo 'export PYTHONPATH="/app/.heroku/vendor/python-geointlib/lib/python2.7/site-packages":"${PYTHONPATH}"' >> /app/.profile.d/geoint.sh
   echo 'export PATH="/app/.heroku/vendor/bin":"${PATH}"' >> /app/.profile.d/geoint.sh
   echo 'export LD_LIBRARY_PATH="/app/.heroku/vendor/lib":"${LD_LIBRARY_PATH}"' >> /app/.profile.d/geoint.sh
-  status "Done."
+  echo "-----> Done."
 fi
 
 bpwatch stop geoint_libs_install
