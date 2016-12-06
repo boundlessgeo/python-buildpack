@@ -26,6 +26,12 @@ if [[ "$BUILD_WITH_GEOINT_LIBRARIES" ]]; then
     curl $VENDORED_GEOINT -s | tar zxv -C .heroku/vendor &> /dev/null
   fi
 
+  if [ -f "requirements.txt" ]; then
+    sed -i '/django-auth-ldap/d' requirements.txt
+    sed -i '/python-ldap/d' requirements.txt
+    sed -i '/GDAL/d' requirements.txt
+  fi
+
   # Update env variables
   echo "-----> Building runtime environment."
   mkdir -p /app/.profile.d

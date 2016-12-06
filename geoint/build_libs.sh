@@ -93,13 +93,16 @@ PYTHONPATH=$pythonsp
 python setup.py install --prefix=$pythonsp
 cd $sandbox
 
-
 # compile python-ldap
 wget https://pypi.python.org/packages/56/b0/d9c47d14ad801f626ff44077548324530f384461b34e4c08a98455ca242d/python-ldap-2.4.28.tar.gz
 tar xf python-ldap-2.4.28.tar.gz && cd python-ldap-2.4.28
 python setup.py build
-PYTHONPATH=$pythonsp
 python setup.py install --prefix=$pythonsp
+cd $sandbox
+
+# compile django-auth-ldap
+wget https://s3.amazonaws.com/boundless-cloudfoundry/cflinuxfs2/django_auth_ldap-1.2.8-py2-none-any.whl
+unzip django_auth_ldap-1.2.8-py2-none-any.whl -d $pythonsp/lib/python2.7/site-packages
 cd $sandbox
 
 # cleanup large boost headers
