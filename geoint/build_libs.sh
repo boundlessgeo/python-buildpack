@@ -86,11 +86,6 @@ tar xf gdal-2.1.2.tar.gz && cd gdal-2.1.2/
     --with-openjpeg=$geointlib \
     --enable-static=no
 make install
-cd swig/python
-python setup.py build
-mkdir -p $pythonsp
-PYTHONPATH=$pythonsp
-python setup.py install --prefix=$pythonsp
 cd $sandbox
 
 # compile python-ldap

@@ -13,8 +13,17 @@ url_to_dependency_map:
   - match: libffi
     name: libffi
     version: 3.2.1
+  - match: geointlib
+    name: geointlib
+    version: 1.0.0
 
 dependencies:
+  - name: geointlib
+    version: 1.0.0
+    cf_stacks:
+      - cflinuxfs2
+    uri: https://s3.amazonaws.com/boundless-cloudfoundry/cflinuxfs2/geointlib-1.0.0-linux-x64.tar.gz
+    md5: 976d8bd4ba1c4d37ecc265d9f841825e
   - name: libmemcache
     version: 1.0.18
     cf_stacks:

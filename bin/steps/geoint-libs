@@ -30,6 +30,7 @@ if [[ "$BUILD_WITH_GEOINT_LIBRARIES" ]]; then
     sed -i '/django-auth-ldap/d' requirements.txt
     sed -i '/python-ldap/d' requirements.txt
     sed -i '/GDAL/d' requirements.txt
+    echo 'GDAL==2.1.0' >> requirements.txt
   fi
 
   # Update env variables
